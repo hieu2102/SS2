@@ -1,0 +1,10 @@
+### Dependencies
+1. spacy
+    # prerequisites Visual C++ 14.0    
+    # install visual C++ build tool for visual studio 2017 (3GB)
+    https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2017
+    
+    pip install spacy
+    python -m spacy download en_core_web_lg
+
+    
