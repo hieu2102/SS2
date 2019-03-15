@@ -3,7 +3,7 @@
 
 ## *1. Collects information using Twitter API*
 ## *2. Categorizes contents using natural language processing*
-4 categories
+4 categories <br>
     1. Food <br>
     2. Technology<br>
     3. Politic<br>
