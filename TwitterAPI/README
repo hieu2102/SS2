@@ -1,0 +1,46 @@
+##Basic Flow
+1. Follow certified users of each categories
+2. Invoke GET friends/list to get list of users the account follow (subscriptions)
+3. For each subscriptions, 
+    a. Invoke GET statuses/user_timeline to get most recent tweet (within 24h)
+    b. Save 5 most recent retweets to database
+4. Pass list of collected tweets to NLP
+
+## API/ tweepy functions
+1. GET friends/list
+    API.friends_ids(id/screen_name/user_id[, cursor])
+        Returns an array containing the IDs of users being followed by the specified user.
+
+    Parameters:	
+        id – Specifies the ID or screen name of the user.
+        screen_name – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.
+        user_id – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.
+        cursor – Breaks the results into pages. Provide a value of -1 to begin paging. Provide values as returned to in the response body’s next_cursor and previous_cursor attributes to page back and forth in the list.
+    Return type:	
+        list of Integers
+
+2. GET statuses/user_timeline
+    API.user_timeline([id/user_id/screen_name][, since_id][, max_id][, count][, page])
+    Returns the 20 most recent statuses posted from the authenticating user or the user specified. It’s also possible to request another user’s timeline via the id parameter.
+
+    Parameters:	
+        id – Specifies the ID or screen name of the user.
+        user_id – Specifies the ID of the user. Helpful for disambiguating when a valid user ID is also a valid screen name.
+        screen_name – Specifies the screen name of the user. Helpful for disambiguating when a valid screen name is also a user ID.
+        since_id – Returns only statuses with an ID greater than (that is, more recent than) the specified ID.
+        max_id – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.
+        count – Specifies the number of statuses to retrieve.
+        page – Specifies the page of results to retrieve. Note: there are pagination limits.
+    Return type:	
+        list of Status objects
+3. 
+    API.retweets(id[, count])
+    Returns up to 100 of the first retweets of the given tweet.
+
+    Parameters:	
+        id – The numerical ID of the status.
+        count – Specifies the number of retweets to retrieve.
+    Return type:	
+        list of Status objects
+
+

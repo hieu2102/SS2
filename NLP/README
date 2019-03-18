@@ -7,4 +7,14 @@
     pip install spacy
     python -m spacy download en_core_web_lg
 
-    
+### Basic flow
+## Text categorization
+# Generate category
+1. Machine Learning dataset for each categories (system files, not stored in database)
+2. Process data (filter personal pronouns, stopwords, punctuation)
+3. Store processed data in spacy vocab class
+
+# Filter tweets by category
+1. Initialize spacy pipeline with textcat pipe
+2. Run input text through the pipeline to get category
+3. Store text at appropriate table
