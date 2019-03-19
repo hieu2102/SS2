@@ -7,7 +7,7 @@
 4. Pass list of collected tweets to NLP
 
 ## API/ tweepy functions
-1. GET friends/list
+DONE 1. GET friends/list
     API.friends_ids(id/screen_name/user_id[, cursor])
         Returns an array containing the IDs of users being followed by the specified user.
 
@@ -19,7 +19,7 @@
     Return type:	
         list of Integers
 
-2. GET statuses/user_timeline
+ISSUE 2. GET statuses/user_timeline
     API.user_timeline([id/user_id/screen_name][, since_id][, max_id][, count][, page])
     Returns the 20 most recent statuses posted from the authenticating user or the user specified. It’s also possible to request another user’s timeline via the id parameter.
 
