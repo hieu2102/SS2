@@ -23,14 +23,14 @@ def getStatuses(screenName):
         list_tweet.update({tId:text})
     return list_tweet
 
-def get_replies(screen_name, tweet_id):
-    query='to:'+screen_name
-    print(tweet_id)
-    replies = api.search(q=query, since_id = tweet_id, count = 1000, result_type='recent')
+def getReplies(screenName, tweetId):
+    query='to:'+screenName
+    print(tweetId)
+    replies = api.search(q=query, since_id = tweetId, count = 1000, result_type='recent')
     filtered_replies=[]
     for reply in replies:
         if hasattr(replies, 'in_reply_to_status_id_str'):
-            if replies.in_reply_to_status_id_str == tweet_id:
+            if(replies.in_reply_to_status_id_str==tweetId):
                 filtered_replies.append(replies.text)
     for reply in filtered_replies:
         print(reply)
